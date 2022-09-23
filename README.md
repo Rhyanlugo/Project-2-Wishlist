@@ -1,8 +1,8 @@
-# Android Project 2 - *Name of App Here*
+# Android Project 2 - *Curios*
 
-Submitted by: **Your Name Here**
+Submitted by: **Rhyan Lugo Crespo**
 
-**Name of your app** is a wishlist app that helps the user keep track of what they want to buy.
+**Curios** is a wishlist app that helps the user keep track of what they want to buy.
 
 Time spent: **X** hours spent in total
 
