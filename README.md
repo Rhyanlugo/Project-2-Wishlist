@@ -49,7 +49,7 @@ at first since I tried to add another listener, but just for clicking and not lo
 I could just add an OnClickListener to the textview with the provided code inside the lamba function and that was that feature finished.
 ## License
 
-    Copyright [2022] [name of copyright owner]
+    Copyright [2022] [Rhyan Lugo Crespo]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
