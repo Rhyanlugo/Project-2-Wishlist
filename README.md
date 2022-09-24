@@ -39,6 +39,7 @@ GIF created with [ScreenToGif](https://www.screentogif.com/) for Windows
 ## Notes
 
 Describe any challenges encountered while building the app.
+
 Setting up the base features wasn't too difficult and adding a new item to the Recycler View was a little tricky at 
 first to figure out but using the lab as a reference it wasn't too difficult to figure out. Out of all the stretch features, 
 the most difficult was definitely the one to delete an item by long pressing. That's probably the thing that I spent the most time
