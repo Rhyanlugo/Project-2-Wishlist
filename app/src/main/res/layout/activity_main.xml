@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/material_dynamic_neutral90">
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/curiosRV"
@@ -17,53 +19,56 @@
 
     <EditText
         android:id="@+id/itemName"
-        android:layout_width="wrap_content"
+        style="@style/InputStyle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="13dp"
+        android:layout_marginEnd="270dp"
         android:hint="@string/item_name"
         android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:textColorHint="#757575"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/itemURL"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/itemURL"
-        android:layout_width="wrap_content"
+        style="@style/InputStyle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="13dp"
+        android:layout_marginEnd="175dp"
         android:layout_marginBottom="13dp"
         android:hint="@string/ex_https_example_example_my_item_url"
         android:inputType="textUri"
-        android:minHeight="48dp"
-        android:textColorHint="#757575"
         android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/itemPrice"
-        android:layout_width="wrap_content"
+        style="@style/InputStyle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginEnd="13dp"
         android:hint="@string/ex_5_99"
         android:inputType="numberDecimal"
-        android:minHeight="48dp"
-        android:textColorHint="#757575"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/itemName" />
 
     <Button
         android:id="@+id/submitBtn"
+        style="@style/StyledButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="13dp"
         android:layout_marginBottom="13dp"
         android:text="@string/submit"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/itemPrice" />

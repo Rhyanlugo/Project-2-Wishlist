@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Project 2 - Wishlist</string>
+    <string name="app_name">Curios</string>
     <string name="item_name">Item Name</string>
     <string name="ex_https_example_example_my_item_url">Ex: https://example.example/my-item-url</string>
     <string name="ex_5_99">Ex: 5.99</string>

@@ -1,10 +1,14 @@
 package com.example.project2_wishlist
 
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.util.Log
+import android.text.SpannableString
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -14,6 +18,7 @@ class MainActivity : AppCompatActivity()
 	{
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_main)
+		supportActionBar!!.setBackgroundDrawable(ColorDrawable(Color.parseColor("#146775")))
 
 		val curiosList: MutableList<Curio> = mutableListOf()
 
@@ -29,16 +34,34 @@ class MainActivity : AppCompatActivity()
 		val submitBtn = findViewById<Button>(R.id.submitBtn)
 
 		submitBtn.setOnClickListener {
-			val curio = Curio(itemName.text.toString(), itemURL.text.toString(), itemPrice.text.toString().toDouble())
 
-			curiosList.add(curio)
+			if (itemName.text.isNotEmpty() && itemURL.text.isNotEmpty() && itemPrice.text.isNotEmpty())
+			{
+				val curio = Curio(itemName.text.toString(), itemURL.text.toString(), itemPrice.text.toString().toDouble())
 
-			itemName.text.clear()
-			itemURL.text.clear()
-			itemPrice.text.clear()
+				val curSize = curiosAdapter.itemCount
+				curiosList.add(curio)
 
-			curiosAdapter.notifyItemChanged(curiosAdapter.itemCount)
+				itemName.text.clear()
+				itemURL.text.clear()
+				itemPrice.text.clear()
+
+				curiosAdapter.notifyItemRangeInserted(curSize, curiosList.size)
+			}
+			else
+			{
+				Toast.makeText(applicationContext, "All forms must be filled.", Toast.LENGTH_SHORT).show()
+			}
 		}
+
+		curiosAdapter.setOnItemLongClickListener(object : CuriosAdapter.OnItemClickListener
+		{
+			override fun onItemClick(itemView: View?, position: Int)
+			{
+				curiosList.removeAt(position)
+				curiosAdapter.notifyItemRemoved(position)
+			}
+		})
 
 	}
 }
